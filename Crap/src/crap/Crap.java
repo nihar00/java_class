@@ -16,7 +16,8 @@ public class Crap {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.print("hi");
+        Crap_Architecture crapArchitecture =  new Crap_Architecture();
+        crapArchitecture.gamePlay();
     }
     
 }

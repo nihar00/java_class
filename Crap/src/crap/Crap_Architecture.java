@@ -23,7 +23,7 @@ public class Crap_Architecture {
     private enum Status {CONTINUE, LOST, WIN};
     
     //What is final & static
-    private final static int TWO = 2;
+    public final static int TWO = 2;
     private final static int THREE = 3;
     private final static int SEVEN = 7;
     private final static int ELEVEN = 11;

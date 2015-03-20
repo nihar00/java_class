@@ -23,6 +23,29 @@ public class MatrixCalculation {
             }
         return result;
     }
+    
+    /*
+     * Method to multiple matrix.
+     * param: array first and second to be multipied
+     * return: array  Returns the multiply of two matrix
+    */
+    public static double[][] multiplyMatrix(double first[][], double second[][], int rows, int col){
+        double result[][] = new double[rows][col];
+        double sum = 0;
+        for(int i = 0; i < rows; i++)
+        {
+            for(int j = 0; j < col; j++)
+            {
+                for(int k = 0; k < rows; k++ )
+                {
+                    sum = sum + (first[i][k]*second[k][j]);
+                }
+                result[i][j] = sum;
+                sum = 0;
+            }
+        }
+        return result;
+    }
 
     /**
      * @param args the command line arguments
@@ -56,7 +79,7 @@ public class MatrixCalculation {
         
         //Add two matrix
         double result[][] = MatrixCalculation.sumMatrix(first, second, rows, cols);
-        System.out.println("The resulting matrix is:\n");
+        System.out.println("The resulting matrix for addition is:\n");
         for(int i = 0; i < rows; i++)
         {
             for(int j = 0; j < cols; j++)
@@ -65,6 +88,19 @@ public class MatrixCalculation {
             }
             System.out.println();
         }
+        
+        //Multiply two matrix
+        double multiplyResult[][] = MatrixCalculation.multiplyMatrix(first, second, rows, cols);
+        System.out.println("The resulting matrix for multiplication is:\n");
+        for(int i = 0; i < rows; i++)
+        {
+            for(int j = 0; j < cols; j++)
+            {
+                System.out.print((int)multiplyResult[i][j] + "\t");
+            }
+            System.out.println();
+        }
+        
     }
     
 }
